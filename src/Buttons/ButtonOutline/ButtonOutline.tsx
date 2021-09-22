@@ -10,6 +10,8 @@ import {
   ViewStyle,
 } from 'react-native';
 import {reduceOpacity} from '../utils/reduceOpacity';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {COLORS} from '../utils/colors';
 
 interface ButtonOutlineProps extends TouchableOpacityProps {
   title?: string;
