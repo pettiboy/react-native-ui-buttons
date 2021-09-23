@@ -76,12 +76,10 @@ const ButtonOutline: FunctionComponent<ButtonOutlineProps> = ({
 
     outlineText: {
       color: useColor, // same as main color
-      fontFamily: 'Nunito-SemiBold',
       textAlign: 'center',
     },
     outlineTextDisabled: {
       color: reduceOpacity(useColor, textOpacityReducer), // main color with less opacity
-      fontFamily: 'Nunito-SemiBold',
       textAlign: 'center',
     },
   });
