@@ -1,17 +1,15 @@
-import React, {FunctionComponent} from 'react';
-
+import React, { FunctionComponent } from "react";
 import {
-  ButtonProps,
   StyleSheet,
   Text,
   TextStyle,
   TouchableOpacity,
   TouchableOpacityProps,
   ViewStyle,
-} from 'react-native';
-import {reduceOpacity} from '../utils/reduceOpacity';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {COLORS} from '../utils/colors';
+} from "react-native";
+import { reduceOpacity } from "../utils/reduceOpacity";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import { COLORS } from "../utils/colors";
 
 interface ButtonOutlineProps extends TouchableOpacityProps {
   title?: string;
@@ -54,9 +52,9 @@ const ButtonOutline: FunctionComponent<ButtonOutlineProps> = ({
 
   const styles = StyleSheet.create({
     button: {
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center",
       borderWidth: borderWidth, // defined as const
       backgroundColor: backgroundColor, // parameters from props
       borderColor: useColor, // same as main color
@@ -65,22 +63,22 @@ const ButtonOutline: FunctionComponent<ButtonOutlineProps> = ({
     },
 
     disabledButton: {
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center",
       backgroundColor: backgroundColor, // same as background color of button
-      borderColor: 'transparent', // tranparent
+      borderColor: "transparent", // tranparent
       padding: padding, // default or customizable
       borderRadius: borderRadius, // default or customizable
     },
 
     outlineText: {
       color: useColor, // same as main color
-      textAlign: 'center',
+      textAlign: "center",
     },
     outlineTextDisabled: {
       color: reduceOpacity(useColor, textOpacityReducer), // main color with less opacity
-      textAlign: 'center',
+      textAlign: "center",
     },
   });
 
@@ -94,7 +92,8 @@ const ButtonOutline: FunctionComponent<ButtonOutlineProps> = ({
             style,
           ]}
           disabled={disabled}
-          onPress={onPress}>
+          onPress={onPress}
+        >
           {!iconAlignRight && materialIcon && (
             <MaterialIcons
               color={iconColor}
@@ -117,7 +116,8 @@ const ButtonOutline: FunctionComponent<ButtonOutlineProps> = ({
         <TouchableOpacity
           style={[styles.button, style]}
           disabled={disabled}
-          onPress={onPress}>
+          onPress={onPress}
+        >
           {!iconAlignRight && materialIcon && (
             <MaterialIcons
               color={iconColor}
