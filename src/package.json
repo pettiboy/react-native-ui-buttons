@@ -1,0 +1,16 @@
+{
+  "name": "react-native-ui-buttons",
+  "version": "1.0.0",
+  "description": "UI Buttons for React Native",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hussain Pettiwala",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-native": "0.65.1",
+    "react-native-vector-icons": "^8.1.0"
+  }
+}
