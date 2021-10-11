@@ -1,13 +1,13 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import {ButtonOutline} from 'react-native-ui-buttons';
+import {ButtonOutline, ButtonSolid} from 'react-native-ui-buttons';
 
 const App = (): JSX.Element => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
         <Text style={styles.heading}>Button Outline</Text>
-        <ButtonOutline title={'Test Button'} />
+        <ButtonSolid title={'Test Button'} disabled={true} />
       </View>
     </SafeAreaView>
   );

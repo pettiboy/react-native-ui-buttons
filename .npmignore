@@ -7,3 +7,6 @@ node_modules
 
 # Runtime data
 tmp
+
+# example app
+TestApp/

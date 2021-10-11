@@ -74,7 +74,6 @@ const ButtonSolid: FunctionComponent<ButtonSolidProps> = ({
     },
     text: {
       textAlign: "center",
-      fontFamily: "Nunito-Regular",
       color: COLORS.WHITE,
     },
   });
