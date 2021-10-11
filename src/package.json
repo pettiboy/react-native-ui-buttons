@@ -1,7 +1,7 @@
 {
   "name": "react-native-ui-buttons",
   "version": "1.0.0",
-  "description": "UI Buttons for React Native",
+  "description": "Simple and fully customizable React Native Button components",
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,7 +23,8 @@
     "ui",
     "button",
     "dual tone button",
-    "buttons"
+    "buttons",
+    "loading support"
   ],
   "author": "Hussain Pettiwala",
   "license": "ISC",
