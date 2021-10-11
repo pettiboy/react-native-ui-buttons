@@ -1,6 +1,6 @@
 {
   "name": "react-native-ui-buttons",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Simple and fully customizable React Native Button components",
   "main": "index.ts",
   "scripts": {
@@ -27,7 +27,7 @@
     "loading support"
   ],
   "author": "Hussain Pettiwala",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "react-native-vector-icons": "^8.1.0"
   },
