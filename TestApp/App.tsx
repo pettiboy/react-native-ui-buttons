@@ -1,14 +1,28 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView, ScrollView, StyleSheet, Text} from 'react-native';
 import {ButtonOutline, ButtonSolid} from 'react-native-ui-buttons';
 
 const App = (): JSX.Element => {
   return (
     <SafeAreaView>
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Text style={styles.heading}>Button Outline</Text>
-        <ButtonSolid title={'Test Button'} disabled={true} />
-      </View>
+        <ButtonOutline
+          title={'Test Button'}
+          buttonLoading={false}
+          disabled={false}
+          onPress={() => console.debug('Button Outline Pressed')}
+          materialIconRight={'check'}
+        />
+        <Text style={styles.heading}>Button Solid</Text>
+        <ButtonSolid
+          title={'Test Button'}
+          buttonLoading={false}
+          disabled={false}
+          onPress={() => console.debug('Button Solid Pressed')}
+          materialIconRight={'check'}
+        />
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -17,6 +31,7 @@ const styles = StyleSheet.create({
   heading: {
     textAlign: 'center',
     marginBottom: 10,
+    marginTop: 20,
     fontSize: 30,
   },
   container: {

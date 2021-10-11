@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, {FunctionComponent} from 'react';
 
 import {
   ActivityIndicator,
@@ -8,133 +8,121 @@ import {
   TouchableOpacity,
   TouchableOpacityProps,
   ViewStyle,
-} from "react-native";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import { COLORS } from "../utils/constants";
-import { reduceOpacity } from "../utils/reduceOpacity";
+} from 'react-native';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {COLORS} from '../utils/constants';
+import {reduceOpacity} from '../utils/reduceOpacity';
 
 interface ButtonSolidProps extends TouchableOpacityProps {
+  // container style
   title?: string;
+  useColor?: string;
+  style?: ViewStyle;
 
-  disabled?: boolean;
-  buttonLoading?: boolean;
-  useColor?: string; // rgb format required
+  // container style utils
   opacityReducer?: number;
-  textOpacityReducer?: number;
   padding?: number;
   borderRadius?: number;
-  materialIcon?: string;
-  iconColor?: string;
-  iconAlignRight?: boolean;
-  textColor?: string;
-  iconSize?: number;
-  noColorChangeWhenDisabled?: boolean;
+  noDisabledStyle?: boolean;
 
-  style?: ViewStyle;
+  // text style
+  textColor?: string;
   textStyle?: TextStyle;
+
+  // manage state
+  disabled?: boolean;
+  buttonLoading?: boolean;
+
+  // icon props
+  materialIconRight?: string;
+  materialIconLeft?: string;
+  iconColor?: string;
+  iconSize?: number;
 }
 
 const ButtonSolid: FunctionComponent<ButtonSolidProps> = ({
+  // container style
   title,
+  useColor = COLORS.PRIMARY,
   style,
+
+  // container style utils
+  opacityReducer = 5,
+  padding = 19,
+  borderRadius = 4,
+  noDisabledStyle = false,
+
+  // text style
   textStyle = {},
+
+  // text style utils
+  textColor = COLORS.WHITE,
+
+  // manage state
   disabled = false,
   buttonLoading = false,
-  useColor = COLORS.PRIMARY, // rgb format required
-  noColorChangeWhenDisabled = false,
-  opacityReducer = 5,
-  textOpacityReducer = 6,
-  padding = 18,
-  borderRadius = 4,
-  materialIcon,
-  iconColor = "#000",
-  iconAlignRight = false,
-  textColor = useColor,
-  iconSize = 20,
+
+  // icon props
+  materialIconRight,
+  materialIconLeft,
+  iconColor = COLORS.WHITE,
+  iconSize = 18,
 
   onPress,
 }) => {
   const styles = StyleSheet.create({
     button: {
-      flexDirection: "row",
-      justifyContent: "center",
+      flexDirection: 'row',
+      justifyContent: 'center',
       backgroundColor: useColor,
       padding: padding,
       borderRadius: borderRadius,
-      alignItems: "center",
+      alignItems: 'center',
     },
     disabledButton: {
-      flexDirection: "row",
-      justifyContent: "center",
-      backgroundColor: noColorChangeWhenDisabled
+      flexDirection: 'row',
+      justifyContent: 'center',
+      backgroundColor: noDisabledStyle
         ? useColor
         : reduceOpacity(useColor, opacityReducer),
       padding: padding,
       borderRadius: borderRadius,
     },
     text: {
-      textAlign: "center",
-      color: COLORS.WHITE,
+      textAlign: 'center',
+      color: textColor,
+      marginHorizontal: 7,
     },
   });
 
   return (
     <>
-      {disabled && (
-        // disabled button
-        <TouchableOpacity
-          style={[styles.disabledButton, style]}
-          onPress={onPress}
-          disabled={disabled}
-        >
-          {materialIcon && (
-            <MaterialIcons
-              color={iconColor}
-              name={materialIcon}
-              size={iconSize}
-            />
-          )}
-          {/* disabled text */}
-          {!buttonLoading && (
-            <Text style={[styles.text, textStyle]}>{title}</Text>
-          )}
-          {buttonLoading && <ActivityIndicator color={useColor} />}
+      <TouchableOpacity
+        style={[disabled ? styles.disabledButton : styles.button, style]}
+        onPress={onPress}
+        disabled={disabled}>
+        {materialIconLeft && !buttonLoading && (
+          <MaterialIcons
+            color={iconColor}
+            name={materialIconLeft}
+            size={iconSize}
+          />
+        )}
 
-          {iconAlignRight && materialIcon && (
-            <MaterialIcons
-              color={useColor}
-              name={materialIcon}
-              size={iconSize}
-            />
-          )}
-        </TouchableOpacity>
-      )}
-
-      {!disabled && (
-        // enabled button
-        <TouchableOpacity
-          style={[styles.button, style]}
-          onPress={onPress}
-          disabled={disabled}
-        >
-          {!iconAlignRight && materialIcon && (
-            <MaterialIcons
-              color={iconColor}
-              name={materialIcon}
-              size={iconSize}
-            />
-          )}
-          {/* enabled text */}
+        {buttonLoading ? (
+          <ActivityIndicator color={useColor} />
+        ) : (
           <Text style={[styles.text, textStyle]}>{title}</Text>
-          {iconAlignRight && materialIcon && (
-            <MaterialIcons
-              color={iconColor}
-              name={materialIcon}
-              size={iconSize}
-            />
-          )}
-        </TouchableOpacity>
-      )}
+        )}
+
+        {materialIconRight && !buttonLoading && (
+          <MaterialIcons
+            color={iconColor}
+            name={materialIconRight}
+            size={iconSize}
+          />
+        )}
+      </TouchableOpacity>
     </>
   );
 };

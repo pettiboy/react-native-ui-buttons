@@ -4,48 +4,72 @@ import {
   Text,
   TextStyle,
   TouchableOpacity,
+  ActivityIndicator,
   TouchableOpacityProps,
   ViewStyle,
 } from "react-native";
 import { reduceOpacity } from "../utils/reduceOpacity";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import { COLORS } from "../utils/colors";
+import { COLORS } from "../utils/constants";
 
 interface ButtonOutlineProps extends TouchableOpacityProps {
+  // container style
   title?: string;
+  useColor?: string;
+  style?: ViewStyle;
 
-  disabled?: boolean;
-  useColor?: string; // rgb format required
+  // container style utils
   opacityReducer?: number;
-  textOpacityReducer?: number;
   padding?: number;
   borderRadius?: number;
-  materialIcon?: string;
-  iconAlignRight?: boolean;
-  iconSize?: number;
-  iconColor?: string;
   noDisabledStyle?: boolean;
 
-  style?: ViewStyle;
+  // text style
   textStyle?: TextStyle;
+
+  // text style utils
+  textOpacityReducer?: number;
+
+  // manage state
+  disabled?: boolean;
+  buttonLoading?: boolean;
+
+  // icon props
+  materialIconRight?: string;
+  materialIconLeft?: string;
+  iconColor?: string;
+  iconSize?: number;
 }
 
 const ButtonOutline: FunctionComponent<ButtonOutlineProps> = ({
+  // container style
   title,
+  useColor = COLORS.PRIMARY,
   style,
-  textStyle,
-  disabled = false,
-  useColor = COLORS.PRIMARY, // rgb format required
-  opacityReducer = 2,
-  textOpacityReducer = 6,
+
+  // container style utils
+  opacityReducer = 3,
   padding = 18,
   borderRadius = 4,
-  materialIcon,
+  noDisabledStyle = false,
+
+  // text style
+  textStyle = {},
+
+  // text style utils
+  textOpacityReducer = 5,
+
+  // manage state
+  disabled = false,
+  buttonLoading = false,
+
+  // icon props
+  materialIconRight,
+  materialIconLeft,
   iconColor = useColor,
-  iconAlignRight = false,
+  iconSize = 18,
+
   onPress,
-  iconSize = 20,
-  noDisabledStyle,
 }) => {
   const borderWidth = 1;
   const backgroundColor = reduceOpacity(useColor, opacityReducer);
@@ -75,67 +99,64 @@ const ButtonOutline: FunctionComponent<ButtonOutlineProps> = ({
     outlineText: {
       color: useColor, // same as main color
       textAlign: "center",
+      marginHorizontal: 7,
     },
     outlineTextDisabled: {
-      color: reduceOpacity(useColor, textOpacityReducer), // main color with less opacity
+      color: noDisabledStyle
+        ? useColor
+        : reduceOpacity(useColor, textOpacityReducer), // main color with less opacity
       textAlign: "center",
+      marginHorizontal: 7,
     },
   });
 
   return (
     <>
-      {disabled ? (
-        // disabled button
-        <TouchableOpacity
-          style={[
-            noDisabledStyle ? styles.button : styles.disabledButton,
-            style,
-          ]}
-          disabled={disabled}
-          onPress={onPress}
-        >
-          {!iconAlignRight && materialIcon && (
-            <MaterialIcons
-              color={iconColor}
-              name={materialIcon}
-              size={iconSize}
-            />
-          )}
-          {/* disabled text */}
-          <Text style={[styles.outlineTextDisabled, textStyle]}>{title}</Text>
-          {iconAlignRight && materialIcon && (
-            <MaterialIcons
-              color={iconColor}
-              name={materialIcon}
-              size={iconSize}
-            />
-          )}
-        </TouchableOpacity>
-      ) : (
-        // enabled button
-        <TouchableOpacity
-          style={[styles.button, style]}
-          disabled={disabled}
-          onPress={onPress}
-        >
-          {!iconAlignRight && materialIcon && (
-            <MaterialIcons
-              color={iconColor}
-              name={materialIcon}
-              size={iconSize}
-            />
-          )}
-          {/* enabled text */}
-          <Text style={[styles.outlineText, textStyle]}>{title}</Text>
-          {iconAlignRight && materialIcon && (
-            <MaterialIcons
-              color={iconColor}
-              name={materialIcon}
-              size={iconSize}
-            />
-          )}
-        </TouchableOpacity>
-      )}
+      <TouchableOpacity
+        style={[
+          noDisabledStyle || !disabled ? styles.button : styles.disabledButton,
+          style,
+        ]}
+        disabled={disabled}
+        onPress={onPress}
+      >
+        {materialIconLeft && !buttonLoading && (
+          <MaterialIcons
+            color={
+              disabled && noDisabledStyle
+                ? reduceOpacity(iconColor, textOpacityReducer)
+                : iconColor
+            }
+            name={materialIconLeft}
+            size={iconSize}
+          />
+        )}
+
+        {buttonLoading ? (
+          <ActivityIndicator color={useColor} />
+        ) : (
+          <Text
+            style={[
+              !disabled ? styles.outlineText : styles.outlineTextDisabled,
+              textStyle,
+            ]}
+          >
+            {title}
+          </Text>
+        )}
+
+        {materialIconRight && !buttonLoading && (
+          <MaterialIcons
+            color={
+              disabled && !noDisabledStyle
+                ? reduceOpacity(iconColor, textOpacityReducer)
+                : iconColor
+            }
+            name={materialIconRight}
+            size={iconSize}
+          />
+        )}
+      </TouchableOpacity>
     </>
   );
 };
