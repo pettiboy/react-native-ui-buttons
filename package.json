@@ -1,6 +1,6 @@
 {
   "name": "react-native-ui-buttons",
-  "version": "2.0.1",
+  "version": "2.1.1",
   "description": "Simple and fully customizable React Native Button components",
   "main": "index.ts",
   "scripts": {
