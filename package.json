@@ -3,6 +3,9 @@
   "version": "2.1.1",
   "description": "Simple and fully customizable React Native Button components",
   "main": "index.ts",
+  "publishConfig": {
+    "@pettiboy:registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

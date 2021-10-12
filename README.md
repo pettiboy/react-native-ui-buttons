@@ -2,7 +2,7 @@
 
 ## ✨ Installation
 
-If you want to use icons make sure you have [`react-native-vector-icon`](https://github.com/oblador/react-native-vector-icons) installed in your project.
+If you want to use icons make sure you have [`react-native-vector-icons`](https://github.com/oblador/react-native-vector-icons) installed in your project.
 
 ```
 npm install --save react-native-ui-buttons
@@ -37,11 +37,11 @@ import {ButtonOutline} from 'react-native-ui-buttons';
 
 ### 🎨 Props to customize container styles
 
-| Attributes | Type        | Description                               | Default               |
-| :--------- | :---------- | :---------------------------------------- | :-------------------- |
-| `title`    | `string`    | Name of the button                        | -                     |
-| `useColor` | `string`    | rgb() format required                     | `'rgb(235, 52, 122)'` |
-| `style`    | `ViewStyle` | style will be applied to button container | -                     |
+| Attributes | Type        | Description                               | Default             |
+| :--------- | :---------- | :---------------------------------------- | :------------------ |
+| `title`    | `string`    | Name of the button                        | -                   |
+| `useColor` | `string`    | rgb() format required                     | `rgb(235, 52, 122)` |
+| `style`    | `ViewStyle` | style will be applied to button container | -                   |
 
 ### 🎨 Props to customize container styles (utils)
 
@@ -76,7 +76,7 @@ import {ButtonOutline} from 'react-native-ui-buttons';
 | `iconColor`         | `string` | Color of icon                           | ButtonOutline `useColor`, ButtonSolid `rgb(255,255,255)` |
 | `iconSize`          | `number` | Size of icon                            | `18`                                                     |
 
-## 📦 react-native-vector-icons Installation
+## 📦 (Optional) react-native-vector-icons Installation
 
 1. Install package
 
