@@ -42,6 +42,8 @@ import {ButtonOutline} from 'react-native-ui-buttons';
 />
 ```
 
+`NOTE:` See [`TestApp`](https://github.com/pettiboy/react-native-ui-buttons/blob/main/TestApp/App.tsx) for more examples.
+
 ## 💡 Props
 
 1. All [`TouchableOpacityProps`](https://reactnative.dev/docs/touchableopacity#props) are valid.
@@ -132,6 +134,6 @@ apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 npx react-native run-ios
 ```
 
-# 📝 Authors
+## 📝 Authors
 
 - Hussain Pettiwala ([@pettiboy](https://github.com/pettiboy))
