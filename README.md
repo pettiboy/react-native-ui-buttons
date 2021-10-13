@@ -1,4 +1,16 @@
-# React Native UI Button
+<div align="center">
+
+# React Native UI Buttons
+
+[![npm](https://img.shields.io/npm/v/react-native-ui-buttons.svg)](https://npmjs.com/package/react-native-ui-buttons) [![npm](https://img.shields.io/npm/dm/react-native-ui-buttons.svg)](https://npmjs.com/package/react-native-ui-buttons)
+
+![](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)
+![](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![](https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white)
+
+</div>
 
 ## ✨ Installation
 
@@ -119,3 +131,7 @@ apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 ```
 npx react-native run-ios
 ```
+
+# 📝 Authors
+
+- Hussain Pettiwala ([@pettiboy](https://github.com/pettiboy))
