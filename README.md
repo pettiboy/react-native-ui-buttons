@@ -3,6 +3,8 @@
 # React Native UI Buttons
 
 [![npm](https://img.shields.io/npm/v/react-native-ui-buttons.svg)](https://npmjs.com/package/react-native-ui-buttons) [![npm](https://img.shields.io/npm/dm/react-native-ui-buttons.svg)](https://npmjs.com/package/react-native-ui-buttons)
+[![License MIT](https://img.shields.io/badge/license-MIT-orange.svg?style=flat)](https://raw.githubusercontent.com/pettiboy/react-native-ui-buttons/main/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/pettiboy/react-native-ui-buttons/pulls)
 
 ![](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -18,6 +20,12 @@ If you want to use icons make sure you have [`react-native-vector-icons`](https:
 
 ```
 npm install --save react-native-ui-buttons
+```
+
+OR
+
+```
+yarn add react-native-ui-buttons
 ```
 
 ## ⚙️ Getting started
@@ -66,7 +74,7 @@ import {ButtonOutline} from 'react-native-ui-buttons';
 | `borderRadius`    | `number`  | Border Radius of button                                                                                                                               | `4`                                  |
 | `noDisabledStyle` | `boolean` | if `true` disabled button will be styled same as enabled button                                                                                       | `false`                              |
 
-### 🎨 Props to customize text styles
+### 💬 Props to customize text styles
 
 | Attributes           | Type        | Description                                                                                       | Default            |
 | :------------------- | :---------- | :------------------------------------------------------------------------------------------------ | :----------------- |
@@ -74,14 +82,14 @@ import {ButtonOutline} from 'react-native-ui-buttons';
 | `textOpacityReducer` | `number`    | `(ButtonOutline only)` amount by which opacity of text should be reduced, when button is disabled | `5`                |
 | `textColor`          | `string`    | `(ButtonSolid only)` color of text                                                                | `rgb(255,255,255)` |
 
-### 🎨 Props to manage state of button
+### 🔧 Props to manage state of button
 
 | Attributes      | Type      | Description                              | Default |
 | :-------------- | :-------- | :--------------------------------------- | :------ |
 | `disabled`      | `boolean` | set it to `true` when button is disabled | `false` |
 | `buttonLoading` | `boolean` | set it to `true` when button is loading  | `false` |
 
-### 🎨 Props for Icon
+### 🎞 Props for Icon
 
 | Attributes          | Type     | Description                             | Default                                                  |
 | :------------------ | :------- | :-------------------------------------- | :------------------------------------------------------- |
