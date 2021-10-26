@@ -52,6 +52,12 @@ import {ButtonOutline} from 'react-native-ui-buttons';
 
 `NOTE:` See [`TestApp`](https://github.com/pettiboy/react-native-ui-buttons/blob/main/TestApp/App.tsx) for more examples.
 
+## Demo
+
+|                                                    Button Solid                                                    |                                                    Button Outline                                                    |
+| :----------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------: |
+| ![alt text](https://github.com/pettiboy/react-native-ui-buttons/blob/main/TestApp/assets/ButtonSolid.png?raw=true) | ![alt text](https://github.com/pettiboy/react-native-ui-buttons/blob/main/TestApp/assets/ButtonOutline.png?raw=true) |
+
 ## 💡 Props
 
 1. All [`TouchableOpacityProps`](https://reactnative.dev/docs/touchableopacity#props) are valid.
