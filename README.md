@@ -24,7 +24,7 @@ npm install --save react-native-ui-buttons
 
 OR
 
-```
+```bash
 yarn add react-native-ui-buttons
 ```
 
@@ -32,7 +32,7 @@ yarn add react-native-ui-buttons
 
 ### 🚀 Solid Button
 
-```
+```tsx
 import {ButtonSolid} from 'react-native-ui-buttons';
 
 <ButtonSolid
@@ -42,7 +42,7 @@ import {ButtonSolid} from 'react-native-ui-buttons';
 
 ### 🚀 Dual Tone Outline Button
 
-```
+```tsx
 import {ButtonOutline} from 'react-native-ui-buttons';
 
 <ButtonOutline
@@ -108,7 +108,7 @@ import {ButtonOutline} from 'react-native-ui-buttons';
 
 1. Install package
 
-```
+```bash
 npm install --save react-native-vector-icons
 ```
 
@@ -116,7 +116,7 @@ npm install --save react-native-vector-icons
 
 2. In your `Info.plist` add
 
-```
+```xml
 <key>UIAppFonts</key>
 <array>
     <string>MaterialIcons.ttf</string>
@@ -125,7 +125,7 @@ npm install --save react-native-vector-icons
 
 3. Install pods and reinstall app
 
-```
+```bash
 npx pod-install
 npx react-native run-ios
 ```
@@ -134,7 +134,7 @@ npx react-native run-ios
 
 2. In your `android/app/build.gradle` add
 
-```
+```gradle
 project.ext.vectoricons = [
     iconFontNames: [ 'MaterialIcons.ttf' ]
 ]
@@ -144,7 +144,7 @@ apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
 3. Reinstall app
 
-```
+```bash
 npx react-native run-ios
 ```
 
