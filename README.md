@@ -2,7 +2,7 @@
 
 # React Native UI Buttons
 
-[![npm](https://img.shields.io/npm/v/react-native-ui-buttons.svg)](https://npmjs.com/package/react-native-ui-buttons) [![npm](https://img.shields.io/npm/dm/react-native-ui-buttons.svg)](https://npmjs.com/package/react-native-ui-buttons)
+[![npm](https://img.shields.io/npm/v/react-native-ui-buttons.svg)](https://npmjs.com/package/react-native-ui-buttons) [![npm](https://img.shields.io/npm/dy/react-native-ui-buttons.svg)](https://npmjs.com/package/react-native-ui-buttons)
 [![License MIT](https://img.shields.io/badge/license-MIT-orange.svg?style=flat)](https://raw.githubusercontent.com/pettiboy/react-native-ui-buttons/main/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/pettiboy/react-native-ui-buttons/pulls)
 
@@ -145,7 +145,7 @@ apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 3. Reinstall app
 
 ```bash
-npx react-native run-ios
+npx react-native run-android
 ```
 
 ## 📝 Authors
